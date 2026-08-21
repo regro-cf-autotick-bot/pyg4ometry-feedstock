@@ -1,13 +1,13 @@
 {% set name = "pyg4ometry" %}
-{% set version = "1.4.4" %}
+{% set version = "1.4.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyg4ometry-{{ version }}.tar.gz
-  sha256: 83181b1a78ab46384c4735ddd2a43f272ba77be55a569b6cde67bc7a30ddef1f
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/pyg4ometry-{{ version }}.tar.gz
+  sha256: bdb68a0af596e8d0316d33ba7a2f13a0637f522e7bf883f4d6c394a227047147
 
 build:
   # no recent qt builds for ppc
@@ -15,7 +15,7 @@ build:
   entry_points:
     - pyg4ometry = pyg4ometry.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   build:
